@@ -24,32 +24,6 @@
 
 <script>
 export default {
-  // props: {
-  //   photo: {
-  //     type: Object,
-  //     required: true,
-  //   },
-  // value: {
-  //   type: Boolean,
-  //   default: false,
-  // },
-  //
-  // },
-  // created() {
-  //   this.dialogVisible = this.value
-  //
-  // },
-  data: () => ({
-    // dialogVisible: false,
-  }),
-  // watch:{
-  //   value(newValue){
-  //     this.dialogVisible = newValue;
-  //   },
-  //   dialogVisible(newValue){
-  //     this.$emit('input', newValue)
-  //   },
-  // },
   computed: {
     fullTitle() {
       return `Название файла - ${this.$store.getters.getCurrentPhoto.title}`;

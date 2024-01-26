@@ -3,7 +3,7 @@
     <v-row>
       <v-text-field v-model="title" />
       <v-file-input v-model="img" />
-      <v-btn @click="addPhoto">Добавить</v-btn>
+      <v-btn @click="addPhoto()">Добавить</v-btn>
     </v-row>
 
   </v-container>
@@ -26,10 +26,10 @@ export default {
         }
         this.$emit('addPhoto', photo);
         console.log(photo);
+        this.title = '';
+        this.img = null;
       }
       reader.readAsDataURL(this.img)
-      this.title = '';
-      this.img = null;
     }
   }
 }

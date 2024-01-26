@@ -21,6 +21,9 @@ export default {
 
         getCurrentPhoto: (state) => state.currentPhoto,
     }, actions: {
+        setPhotos({commit, state}, newObjectPhoto) {
+            commit('setPhotos', [...state.photos, newObjectPhoto]);
+        },
         fetchPhotos(context) {
             axios.get('https://jsonplaceholder.typicode.com/photos?_limit=10')
                 .then(response => context.commit('setPhotos', response.data));

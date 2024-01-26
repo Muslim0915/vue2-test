@@ -2,7 +2,7 @@
 
   <v-container>
     <PhotoForm
-        @addPhoto="addPhoto"
+        @addPhoto="addPhoto($event)"
     />
     <v-row>
       <AppPhoto
@@ -11,9 +11,7 @@
           :photo="photo"
 
       />
-<!--      @openPhoto = "openPhoto" this was emited from AppPhoto component-->
       <PhotoDialog />
-<!--      :photo="currentPhoto"-->
     </v-row>
 
 
@@ -28,22 +26,11 @@ import {mapActions} from "vuex";
 
 export default {
   components: {PhotoDialog, PhotoForm, AppPhoto},
-  data: () => ({
-    photos: [],
-    // currentPhoto: {},
-    // dialogVisible: false,
-  }),
-  mounted() {
-    // this.fetchTodos();
-    // this.$store.dispatch('fetchPhotos')
-    this.fetchPhotos()
+  async mounted() {
+    await this.fetchPhotos()
   },
   methods: {
     ...mapActions(['fetchPhotos']),
-    // fetchTodos() {
-    //   this.axios.get('https://jsonplaceholder.typicode.com/photos?_limit=10');
-    //       .then(response => this.photos = response.data);
-    // },
     addPhoto(photo) {
       this.$store.getters.getAllPhotos.push(photo);
       console.log(this.photos);
