@@ -6,11 +6,11 @@
         dark
     >
       <v-spacer></v-spacer>
-      <v-btn outlined class="ml-3">
-        <router-link to="/">Главная</router-link>
+      <v-btn outlined class="btn ml-3">
+        <router-link class="link"  to="/">Главная</router-link>
       </v-btn>
-      <v-btn outlined class="ml-3">
-        <router-link to="/photos">Фотографии</router-link>
+      <v-btn outlined class="btn ml-3">
+        <router-link class="link" to="/photos">Фотографии</router-link>
       </v-btn>
 
     </v-app-bar>
@@ -24,5 +24,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.btn{
+  margin-right: 20px;
+  &:last-child{
+    margin-right: 0;
+  }
+}
+.link{
+  color: #fff;
+  text-decoration: none;
+}
 
 </style>
